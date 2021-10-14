@@ -18,6 +18,7 @@ import zendesk.support.guide.ViewArticleActivity;
 import zendesk.support.request.RequestActivity;
 import zendesk.support.request.RequestUiConfig;
 import zendesk.support.requestlist.RequestListActivity;
+import zendesk.support.CustomField;
 
 public class Zendesk extends CordovaPlugin {
   private static final String ACTION_INITIALIZE = "initialize";

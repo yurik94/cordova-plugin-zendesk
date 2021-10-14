@@ -26,6 +26,7 @@ public class Zendesk extends CordovaPlugin {
   private static final String ACTION_SHOW_HELP_CENTER_ARTICLE = "showHelpCenterArticle";
   private static final String ACTION_SHOW_TICKET_REQUEST = "showTicketRequest";
   private static final String ACTION_SHOW_USER_TICKETS = "showUserTickets";
+  private static final String ACTION_SET_JWT_IDENTITY = "setJWTIdentity";
 
   @Override
   public boolean execute(String action, CordovaArgs args, CallbackContext callbackContext)
@@ -47,6 +48,13 @@ public class Zendesk extends CordovaPlugin {
         .build();
 
       zendesk.core.Zendesk.INSTANCE.setIdentity(identity);
+      } else if (ACTION_SET_JWT_IDENTITY.equals(action)) {
+      String jwt = args.getString(0);
+      
+      Identity identity = new JwtIdentity(jwt);
+
+      zendesk.core.Zendesk.INSTANCE.setIdentity(identity);
+      
     } else if (ACTION_SHOW_HELP_CENTER.equals(action)) {
       String groupType = args.getString(0);
       List<Long> groupIds;

@@ -28,6 +28,17 @@ Zendesk.prototype.setAnonymousIdentity = function(name, email, successCallback, 
 }
 
 /**
+ * Sets an authenticated user identity via JWT for tracking the user
+ *
+ * @param jwt zendesk jwt (optional)
+ * @param successCallback The callback to be executed upon command success
+ * @param errorCallback The callback to be executed upon command failure
+ */
+Zendesk.prototype.setJWTIdentity = function(jwt, successCallback, errorCallback) {
+  exec(successCallback, errorCallback, 'Zendesk', 'setJWTIdentity', [jwt]);
+}
+
+/**
  * Opens a native view for viewing the help center
  *
  * @param groupType Either "category" or "section" to filter articles by group type (optional)

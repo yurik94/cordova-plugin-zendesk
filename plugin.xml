@@ -47,8 +47,6 @@
 
     <source-file src="src/android/Zendesk.java" target-dir="src/com/rarestep/zendesk" />
     
-    <source-file src="src/android/JwtAuth.java" target-dir="src/com/rarestep/zendesk" />
-
     <framework src="src/android/zendesk.gradle" custom="true" type="gradleReference" />
   </platform>
 </plugin>

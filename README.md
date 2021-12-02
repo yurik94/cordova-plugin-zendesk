@@ -28,13 +28,13 @@ var email = "tdurden@paperstreetsoapco.com";
 window.zendesk.setAnonymousIdentity(name, email);
 ```
 
-### setIdentity
+### setJWTIdentity
 Sets the Zendesk SDK to use a specific identity.
 
 ```
 var token = "abcdef123456";
 
-window.zendesk.setIdentity(token);
+window.zendesk.setJWTIdentity(token);
 ```
 
 ### showHelpCenter
